@@ -1,0 +1,24 @@
+CREATE OR REPLACE TYPE BODY f_bdt_user_type 
+IS
+MEMBER FUNCTION getId RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(pk_id,0,25);
+END;
+MEMBER FUNCTION getUserLocation RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(user_location,0,50);
+END;
+MEMBER FUNCTION getRealName RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(real_name,0,25);
+END;
+MEMBER FUNCTION getUserName RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(user_name,0,25);
+END;
+
+END;

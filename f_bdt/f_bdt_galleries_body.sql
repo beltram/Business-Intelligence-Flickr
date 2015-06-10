@@ -1,0 +1,44 @@
+CREATE OR REPLACE TYPE BODY f_bdt_galleries_type 
+IS
+MEMBER FUNCTION getId RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(pk_id,0,25);
+END;
+MEMBER FUNCTION getFkPhoto RETURN number
+IS
+BEGIN
+  RETURN TO_NUMBER(fk_photo);
+END;
+MEMBER FUNCTION getCountComments RETURN number
+IS
+BEGIN
+  RETURN TO_NUMBER(count_comments);
+END;
+MEMBER FUNCTION getCountPhotos RETURN number
+IS
+BEGIN
+  RETURN TO_NUMBER(count_photos);
+END;
+MEMBER FUNCTION getCountVideos RETURN number
+IS
+BEGIN
+  RETURN TO_NUMBER(count_videos);
+END;
+MEMBER FUNCTION getCountViews RETURN number
+IS
+BEGIN
+  RETURN TO_NUMBER(count_views);
+END;
+MEMBER FUNCTION getOwner RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(owner,0,50);
+END;
+MEMBER FUNCTION getTitle RETURN varchar
+IS
+BEGIN
+  RETURN SUBSTR(title,0,150);
+END;
+
+END;
